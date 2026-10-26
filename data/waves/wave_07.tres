@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="WaveData" format=3]
+
+[ext_resource type="Script" path="res://scripts/wave_data.gd" id="1_wave"]
+
+[resource]
+script = ExtResource("1_wave")
+entries = Array[Dictionary]([{"enemy": "res://scenes/enemies/mouse.tscn", "count": 20, "interval": 0.4, "hp_scale": 1.5}, {"enemy": "res://scenes/enemies/rat.tscn", "count": 8, "interval": 1.0, "hp_scale": 1.3}, {"enemy": "res://scenes/enemies/armored_rat.tscn", "count": 2, "interval": 2.5, "hp_scale": 1.1}])
+clear_bonus = 50

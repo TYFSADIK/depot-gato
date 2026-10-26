@@ -1,0 +1,28 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/tower.gd" id="1_tower"]
+[ext_resource type="PackedScene" path="res://scenes/projectile.tscn" id="2_proj"]
+
+[node name="BasicTower" type="Node2D"]
+script = ExtResource("1_tower")
+display_name = "Tabby"
+sprite_name = "tabby"
+cost = 50
+attack_range = 44.0
+cooldown = 0.45
+damage = 4.0
+projectile_scene = ExtResource("2_proj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -4)

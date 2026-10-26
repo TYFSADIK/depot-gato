@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_enemy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 5.0
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_enemy")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_body")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+
+[node name="HpBar" type="ProgressBar" parent="."]
+offset_left = -7.0
+offset_top = -12.0
+offset_right = 7.0
+offset_bottom = -10.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
